@@ -1,0 +1,14 @@
+# Composer
+composer
+composer.phar
+/vendor/
+
+# Editors
+.vscode/
+
+# Environment
+.env
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml

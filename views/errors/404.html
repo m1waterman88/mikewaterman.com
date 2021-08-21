@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Mike is missing!{% endblock %}
+
+{% block h1 %}404: Where are we?{% endblock %}
+
+{% block main %}
+    <section class="post">
+        <hr>
+        <img src="/assets/images/this_is_fine.jpeg" alt="Dog surrounded by fire saying, 'This is fine.'">
+
+        <p>Sorry... I don't recognize a page called <span class="danger">{{ uri }}</span>.</p>
+        <p>Instead, try one of these:</p>
+        <ul>
+            {% for route in routes %}
+                <li>{{ route }}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+    </section>
+{% endblock %}

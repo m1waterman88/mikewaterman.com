@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Mke Waterman - log {{ posts.id }}{% endblock %}
+
+{% block h1 %}cat thoughts.log | grep "{{ posts.title }}"{% endblock %}
+
+{% block main %}
+    <section>
+        <article class="post">
+            <h2 class="heading">Log {{ posts.id }}: {{ posts.title }}</h2>
+            <p class="meta">
+                <i>{{ posts.published_date }} by {{ posts.author }}</i>
+            </p>
+            <p>{{ posts.text|nl2br }}</p>
+
+            <hr>
+            <a class="return" href="/logs">Return to logs</a>
+            <hr>
+        </article>
+    </section>
+{% endblock %}

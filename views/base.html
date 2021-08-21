@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/assets/style/style.css">
+</head>
+<body>
+    <noscript class="alert alert-danger">
+        <strong>D'oh! JavaScript is turned off or your browser doesn't support it!</strong>
+    </noscript>
+
+    <header class="heading">
+        <h1>{% block h1 %}{% endblock %}</h1>
+
+        <img class="headshot" src="/assets/images/headshot.jpg" alt="Mike's headshot">
+
+        <nav class="nav nav-tabs justify-content-center" id="nav">
+            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/logs">Logs</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block main %}{% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Don't like the colors? Change them!</p>
+
+        <p>
+            <select class="form-control-sm" name="priColor" id="priColor">
+                {% set selected = '' %}
+                {% for color, value in colors %}
+                    {% if color == 'orange' %}
+                        {% set selected = 'selected' %}
+                    {% endif %}
+                    <option value="{{ value }}" {{ selected }}>{{ color }}</option>
+                    {% set selected = '' %}
+                {% endfor %}
+            </select>
+            <span class="circle circle-pri"></span>
+        </p>
+        <p>
+            <select class="form-control-sm" name="secColor" id="secColor">
+                {% set selected = '' %}
+                {% for color, value in colors %}
+                    {% if color == 'blue' %}
+                        {% set selected = 'selected' %}
+                    {% endif %}
+                    <option value="{{ value }}" {{ selected }}>{{ color }}</option>
+                    {% set selected = '' %}
+                {% endfor %}
+            </select>
+            <span class="circle circle-sec"></span>
+        </p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

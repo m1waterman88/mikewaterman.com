@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Mke Waterman - log{% endblock %}
+
+{% block h1 %}less /var/log/mike/thoughts.log{% endblock %}
+
+{% block main %}
+    <section>
+        {% for post in posts %}
+            <article class="post">
+                <h2 class="heading">
+                    <a href="logs/log/{{ post.id }}">{{ post.title }}</a>
+                </h2>
+                <p class="meta">
+                    <i>{{ post.published_date }} by {{ post.author }}</i>
+                </p>
+                <p>{{ post.text|nl2br }}</p>
+                <hr>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

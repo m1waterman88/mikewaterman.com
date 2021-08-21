@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Mike Waterman{% endblock %}
+
+{% block h1 %}Meet Mike{% endblock %}
+
+{% block main %}
+    <section class="post">
+        <h2 class="heading">echo "Hello, {$name}!"</h2>
+        <p>I'm a Software Engineer at <a href="https://www.vultr.com" target="blank" class="link"><u>Vultr</u></a>, with a passion for back-end development and server-side scripting in Linux environments.</p>
+
+        <p>
+            This site serves as a spot for <a href="logs"><em><u>some content</u></a>, sure, but it's mainly a place for experimentation.
+        </p>
+
+        This site runs on a LEMP stack:
+        <ul>
+            <li>Vultr VPS</li>
+            <li>Ubuntu 20.04 LTS</li>
+            <li>NGINX</li>
+            <li>Let's Encrypt and Certbot</li>
+            <li>PHP {{ phpVersion }}</li>
+            <li>MariaDB</li>
+            <li>HTML5, CSS3, and JavaScript (ES6)</li>
+            <li>Bootstrap 4</li>
+        </ul>
+        <hr>
+    </section>
+{% endblock %}
